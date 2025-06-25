@@ -58,8 +58,9 @@ const whatsappNumber = '5599999999999'; // Exemplo: 55 + DDD + número
 
 const Home: React.FC = () => {
   const highlightsRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll para o carrossel mobile
+  // Auto-scroll para o carrossel de diferenciais
   useEffect(() => {
     const container = highlightsRef.current;
     if (!container) return;
@@ -69,7 +70,28 @@ const Home: React.FC = () => {
     let interval: NodeJS.Timeout;
 
     function autoScroll() {
-      if (window.innerWidth > 700) return; // Só no mobile
+      if (window.innerWidth > 700) return;
+      index = (index + 1) % cards;
+      const card = container.children[index] as HTMLElement;
+      card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    interval = setInterval(autoScroll, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Auto-scroll para o carrossel de serviços
+  useEffect(() => {
+    const container = servicesRef.current;
+    if (!container) return;
+
+    let index = 0;
+    const cards = container.children.length;
+    let interval: NodeJS.Timeout;
+
+    function autoScroll() {
+      if (window.innerWidth > 700) return;
       index = (index + 1) % cards;
       const card = container.children[index] as HTMLElement;
       card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
@@ -109,7 +131,7 @@ const Home: React.FC = () => {
       </section>
       <section className="cards-section">
         <h2>Principais Serviços</h2>
-        <div className="cards-container">
+        <div className="cards-container" ref={servicesRef}>
           {services.map((service, idx) => (
             <div className="card animated-card" key={idx}>
               <div className="icon">{service.icon}</div>
