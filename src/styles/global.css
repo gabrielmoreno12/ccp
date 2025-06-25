@@ -1,0 +1,157 @@
+body {
+  background: #faf9f6;
+  color: #223;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, .cards-section h2 {
+  color: #012773 !important;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header, .footer {
+    background-color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-main {
+  background: #012773;
+  border-bottom: 1px solid #012773;
+  padding: 0;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 64px; /* aumente conforme desejar, ex: 64px ou 72px */
+  margin-right: 12px;
+}
+
+.logo-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 1px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 24px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #e3e8ee;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    font-weight: bold;
+}
+
+.faq-answer {
+    margin-left: 20px;
+}
+
+@media (max-width: 700px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo no eixo horizontal */
+    padding: 12px 8px;
+    gap: 10px;
+  }
+
+  .logo-area {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+  }
+
+  .logo-img {
+    height: 48px;
+    margin-bottom: 8px;
+    margin-right: 0; /* Remove espaço lateral */
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center; /* Centraliza os links também */
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    font-size: 1rem;
+    padding: 4px 0;
+  }
+}
